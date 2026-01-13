@@ -1,0 +1,43 @@
+{% extends 'index.html' %}
+
+{% block content %}
+<div class="container py-5">
+    <div class="row justify-content-center">
+        <div class="col-md-5">
+            <div class="card shadow border-0 py-3">
+                <div class="card-body">
+                    <h2 class="text-center fw-bold mb-4">Daftar Akun</h2>
+                    
+                    <form method="POST">
+                        {% csrf_token %}
+                        
+                        <div class="mb-3">
+                            <label class="form-label fw-bold">Nama Pengguna (Username)</label>
+                            <input type="text" name="username" class="form-control" placeholder="Masukkan username..." required>
+                            <div class="form-text">Gunakan nama unik tanpa spasi.</div>
+                        </div>
+                        
+                        <div class="mb-3">
+                            <label class="form-label fw-bold">Kata Sandi</label>
+                            <input type="password" name="password" class="form-control" placeholder="Buat password minimal 8 karakter..." required>
+                        </div>
+
+                        <div class="mb-3">
+                            <label class="form-label fw-bold">Ulangi Kata Sandi</label>
+                            <input type="password" name="password_confirm" class="form-control" placeholder="Ketik ulang password..." required>
+                        </div>
+                        
+                        <div class="d-grid mt-4">
+                            <button type="submit" class="btn btn-success fw-bold">Daftar Sekarang</button>
+                        </div>
+                    </form>
+
+                    <div class="text-center mt-4">
+                        <p class="small mb-0">Sudah punya akun? <a href="{% url 'login' %}" class="text-decoration-none fw-bold">Login di sini</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

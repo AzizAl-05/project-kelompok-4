@@ -1,0 +1,79 @@
+{% extends 'index.html' %}
+
+{% block content %}
+<div class="container py-5">
+<div class="d-flex flex-column flex-md-row justify-content-between align-items-center mb-4 gap-2">
+    <h2 class="fw-bold mb-0 text-center text-md-start">
+        <i class="bi bi-speedometer2 text-success me-2"></i>Dashboard Admin
+    </h2>
+    <span class="badge bg-dark px-3 py-2 shadow-sm">
+        <i class="bi bi-shield-check me-1"></i> Mode Administrator
+    </span>
+</div>
+
+    <div class="row g-4 text-center">
+        <div class="col-md-4">
+            <div class="card border-0 shadow-sm bg-success text-white p-4">
+                <div class="d-flex align-items-center justify-content-between">
+                    <div>
+                        <h1 class="fw-bold mb-0">{{ total_buku }}</h1>
+                        <p class="mb-0">Total Koleksi Buku</p>
+                    </div>
+                    <i class="bi bi-bookshelf display-4 opacity-50"></i>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="card border-0 shadow-sm bg-primary text-white p-4">
+                <div class="d-flex align-items-center justify-content-between">
+                    <div>
+                        <h1 class="fw-bold mb-0">{{ total_user }}</h1>
+                        <p class="mb-0">Member Terdaftar</p>
+                    </div>
+                    <i class="bi bi-people-fill display-4 opacity-50"></i>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="card border-0 shadow-sm bg-warning text-dark p-4">
+                <div class="d-flex align-items-center justify-content-between">
+                    <div>
+                        <h1 class="fw-bold mb-0">{{ total_dipinjam }}</h1>
+                        <p class="mb-0">Buku Sedang Dipinjam</p>
+                    </div>
+                    <i class="bi bi-arrow-left-right display-4 opacity-50"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="card shadow-sm border-0 mt-4">
+    <div class="card-body">
+        <h5 class="fw-bold mb-3">Aksi Cepat Admin</h5>
+        <div class="row g-2"> <div class="col-6 col-md-3">
+                <a href="/admin/" class="btn btn-dark w-100 py-3 h-100 shadow-sm">
+                    <i class="bi bi-gear d-block mb-1"></i> Admin Django
+                </a>
+            </div>
+            <div class="col-6 col-md-3">
+                <a href="{% url 'kelola_buku' %}" class="btn btn-outline-success w-100 py-3 h-100 shadow-sm">
+                    <i class="bi bi-book d-block mb-1"></i> Kelola Buku
+                </a>
+            </div>
+            <div class="col-6 col-md-3">
+                <a href="{% url 'kelola_member' %}" class="btn btn-outline-primary w-100 py-3 h-100 shadow-sm">
+                    <i class="bi bi-people d-block mb-1"></i> Pantau Member
+                </a>
+            </div>
+            <div class="col-6 col-md-3">
+                <a href="{% url 'daftar_peminjaman' %}" fw-bold class="btn btn-primary w-100 py-3 h-100 shadow-sm">
+                    <i class="bi bi-arrow-repeat d-block mb-1"></i> Buka Pinjaman
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+{% endblock %}

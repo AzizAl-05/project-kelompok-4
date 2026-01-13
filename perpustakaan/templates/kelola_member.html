@@ -1,0 +1,64 @@
+{% extends 'index.html' %}
+
+{% block content %}
+<div class="container py-5">
+    <div class="d-flex justify-content-between align-items-center mb-4">
+        <h2 class="fw-bold mb-0">Manajemen Member</h2>
+        <div class="d-flex gap-2">
+            <a href="{% url 'admin_dashboard' %}" class="btn btn-outline-primary">
+                <i class="bi bi-speedometer2 me-1"></i> Dashboard
+            </a>
+            <a href="/admin/auth/user/add/" class="btn btn-success">
+                <i class="bi bi-person-plus me-1"></i> Tambah Member
+            </a>
+        </div>
+    </div>
+
+    <div class="table-responsive card shadow-sm border-0 p-3">
+        <table class="table table-hover align-middle">
+            <thead class="table-light">
+                <tr>
+                    <th>Username</th>
+                    <th>Email</th>
+                    <th>Tanggal Bergabung</th>
+                    <th>Status</th>
+                    <th class="text-center">Aksi</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for u in daftar_user %}
+                <tr>
+                    <td>
+                        <div class="d-flex align-items-center">
+                            <i class="bi bi-person-circle fs-4 me-2 text-secondary"></i>
+                            <span class="fw-bold">{{ u.username }}</span>
+                        </div>
+                    </td>
+                    <td>{{ u.email|default:"-" }}</td>
+                    <td>{{ u.date_joined|date:"d M Y" }}</td>
+                    <td>
+                        {% if u.is_superuser %}
+                            <span class="badge bg-danger">Admin</span>
+                        {% else %}
+                            <span class="badge bg-primary">Member</span>
+                        {% endif %}
+                    </td>
+                    <td class="text-center">
+                        <div class="btn-group">
+                            <a href="/admin/auth/user/{{ u.id }}/change/" class="btn btn-sm btn-outline-primary">
+                                <i class="bi bi-pencil"></i>
+                            </a>
+                            {% if not u.is_superuser %}
+                            <a href="/admin/auth/user/{{ u.id }}/delete/" class="btn btn-sm btn-outline-danger">
+                                <i class="bi bi-trash"></i>
+                            </a>
+                            {% endif %}
+                        </div>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
+{% endblock %}

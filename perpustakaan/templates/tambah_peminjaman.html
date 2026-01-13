@@ -1,0 +1,40 @@
+{% extends 'index.html' %}
+
+{% block content %}
+<div class="container py-5">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <div class="card shadow border-0">
+                <div class="card-body p-4">
+                    <h3 class="fw-bold text-center mb-4">Input Peminjaman Baru</h3>
+                    <form method="POST">
+                        {% csrf_token %}
+                        <div class="mb-3">
+                            <label class="form-label fw-bold">Pilih Anggota (User)</label>
+                            <select name="user" class="form-select" required>
+                                <option value="" selected disabled>-- Pilih Nama Anggota --</option>
+                                {% for u in users %}
+                                    <option value="{{ u.id }}">{{ u.username }}</option>
+                                {% endfor %}
+                            </select>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label fw-bold">Pilih Buku</label>
+                            <select name="buku" class="form-select" required>
+                                <option value="" selected disabled>-- Pilih Judul Buku --</option>
+                                {% for b in books %}
+                                    <option value="{{ b.id }}">{{ b.judul }}</option>
+                                {% endfor %}
+                            </select>
+                        </div>
+                        <div class="d-grid mt-4">
+                            <button type="submit" class="btn btn-primary fw-bold py-2">Simpan Data Pinjam</button>
+                            <a href="{% url 'daftar_peminjaman' %}" class="btn btn-light mt-2">Batal</a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

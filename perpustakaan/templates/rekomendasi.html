@@ -1,0 +1,28 @@
+{% extends 'index.html' %}
+
+{% block content %}
+<div class="container py-5">
+    <div class="text-center mb-5">
+        <h2 class="fw-bold">📚 Rekomendasi Buku Pilihan</h2>
+        <p class="text-muted">Temukan inspirasi bacaan terbaik minggu ini khusus untuk kamu.</p>
+        <a href="{% url 'gallery' %}" class="btn btn-outline-success me-2">Lihat Semua Koleksi Buku</a>
+    </div>
+
+    <div class="row g-4">
+        {% for b in daftar_rekomendasi %}
+        <div class="col-md-4">
+            <div class="card h-100 border-0 shadow-sm overflow-hidden">
+                {% if b.cover %}
+                <img src="{{ b.cover.url }}" class="card-img-top" style="height: 350px; object-fit: cover;">
+                {% endif %}
+                <div class="card-body">
+                    <h5 class="fw-bold">{{ b.judul }}</h5>
+                    <p class="text-success mb-2">{{ b.penulis }}</p>
+                    <a href="{% url 'detail_buku' b.id %}" class="btn btn-dark btn-sm w-100">Lihat Detail</a>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}

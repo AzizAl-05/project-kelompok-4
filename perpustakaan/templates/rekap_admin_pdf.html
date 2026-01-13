@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        @page { size: a4 landscape; margin: 1cm; }
+        body { font-family: Helvetica, sans-serif; font-size: 12px; }
+        .judul { text-align: center; margin-bottom: 20px; }
+        table { width: 100%; border-collapse: collapse; }
+        th, td { border: 1px solid #333; padding: 8px; text-align: left; }
+        th { background-color: #f2f2f2; }
+        .footer { margin-top: 30px; text-align: right; }
+    </style>
+</head>
+<body>
+    <div class="judul">
+        <h1>LAPORAN REKAP PEMINJAMAN BUKU</h1>
+        <p>Perpustakaan Jejak Kata | Dicetak pada: {{ tanggal_cetak|date:"d F Y H:i" }}</p>
+    </div>
+
+    <table>
+        <thead>
+            <tr>
+                <th>No</th>
+                <th>Nama Peminjam</th>
+                <th>Judul Buku</th>
+                <th>Tanggal Pinjam</th>
+                <th>Status</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for p in semua_pinjaman %}
+            <tr>
+                <td>{{ forloop.counter }}</td>
+                <td>{{ p.user.username }}</td>
+                <td>{{ p.buku.judul }}</td>
+                <td>{{ p.tanggal_pinjam|date:"d M Y" }}</td>
+                <td>{{ p.status|upper }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+    <div class="footer">
+        <p>Dicetak oleh Admin: {{ admin_name }}</p>
+    </div>
+</body>
+</html>

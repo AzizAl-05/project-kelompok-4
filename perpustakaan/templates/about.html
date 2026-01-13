@@ -1,0 +1,143 @@
+{% extends 'index.html' %}
+
+{% block content %}
+<div class="container py-5">
+    <div class="row justify-content-center text-center mb-5">
+        <div class="col-md-8">
+            <h1 class="fw-bold">Tentang Perpustakaan Kami</h1>
+            <p class="text-muted fs-5">Membangun jembatan pengetahuan melalui akses literasi digital yang mudah dan modern.</p>
+            <hr class="w-25 mx-auto border-success border-2">
+        </div>
+    </div>
+
+    <div class="row g-4 align-items-center mb-5">
+        <div class="col-md-6">
+            <div class="card border-0 shadow-sm p-4 bg-light">
+                <h3 class="fw-bold text-success"><i class="bi bi-eye"></i> Visi Kami</h3>
+                <p>Menjadi pusat literasi digital terdepan yang mampu menginspirasi masyarakat untuk terus belajar tanpa batasan ruang dan waktu.</p>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="card border-0 shadow-sm p-4 bg-light">
+                <h3 class="fw-bold text-success"><i class="bi bi-bullseye"></i> Misi Kami</h3>
+                <ul class="mb-0">
+                    <li>Menyediakan koleksi buku berkualitas secara digital.</li>
+                    <li>Mempermudah sistem peminjaman bagi seluruh anggota.</li>
+                    <li>Mendukung program literasi nasional melalui teknologi.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="row text-center g-4">
+        <div class="col-md-4">
+            <div class="p-3">
+                <i class="bi bi-shield-check display-4 text-success"></i>
+                <h5 class="fw-bold mt-3">Aman & Terpercaya</h5>
+                <p class="small text-muted">Data peminjaman kamu tersimpan rapi dalam sistem kami yang terenkripsi.</p>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="p-3">
+                <i class="bi bi-lightning-charge display-4 text-success"></i>
+                <h5 class="fw-bold mt-3">Proses Cepat</h5>
+                <p class="small text-muted">Pinjam buku hanya dengan satu klik, tanpa perlu antre panjang.</p>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="p-3">
+                <i class="bi bi-phone display-4 text-success"></i>
+                <h5 class="fw-bold mt-3">Akses Fleksibel</h5>
+                <p class="small text-muted">Bisa diakses kapan saja dan di mana saja melalui perangkat favoritmu.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="mt-5 text-center p-5 bg-dark text-white rounded-4 shadow">
+        <h4 class="fw-bold mb-3">Mari Menjelajah Ilmu</h4>
+        <p>Bergabunglah dengan ribuan pembaca lainnya dan mulai petualangan literatmu hari ini.</p>
+        <a href="{% url 'gallery' %}" class="btn btn-success px-4 rounded-pill mt-2">Lihat Koleksi Buku</a>
+    </div>
+
+    <div class="row justify-content-center mt-5">
+        <div class="col-md-8 text-center mb-5">
+            <h3 class="fw-bold">Tim di Balik Layar</h3>
+            <p class="text-muted">Kenali para pengembang yang membangun sistem perpustakaan ini.</p>
+        </div>
+    </div>
+
+    <div class="row g-4 justify-content-center mb-4">
+        <div class="col-md-4 text-center">
+            <div class="card border-0 shadow-sm h-100 p-3">
+                <div class="mx-auto mt-3 mb-3" style="width: 120px; height: 120px;">
+                    <img src="../static/images/Aziz.jpg" class="rounded-circle img-thumbnail shadow-sm w-100 h-100 object-fit-cover">
+                </div>
+                <h5 class="fw-bold mb-1">Abdul Aziz Al Palembani</h5>
+                <p>NIM : 0110225118</p>
+                <p class="text-success small mb-3">Project Leader</p>
+                <div class="d-flex justify-content-center gap-2">
+                    <a href="#" class="text-secondary fs-5"></a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4 text-center">
+            <div class="card border-0 shadow-sm h-100 p-3">
+                <div class="mx-auto mt-3 mb-3" style="width: 120px; height: 120px;">
+                    <img src="../static/images/Giza.jpeg" class="rounded-circle img-thumbnail shadow-sm w-100 h-100 object-fit-cover">
+                </div>
+                <h5 class="fw-bold mb-1">M Giza Reifan J </h5>
+                                  <p>NIM : 0110225149</p>
+                <p class="text-success small mb-3">Programmer</p>
+                <div class="d-flex justify-content-center gap-2">
+                    <a href="#" class="text-secondary fs-5"></a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4 text-center">
+            <div class="card border-0 shadow-sm h-100 p-3">
+                <div class="mx-auto mt-3 mb-3" style="width: 120px; height: 120px;">
+                    <img src="../static/images/Ghifana.jpeg" class="rounded-circle img-thumbnail shadow-sm w-100 h-100 object-fit-cover">
+                </div>
+                <h5 class="fw-bold mb-1">Ghifana Adzkia Ahmad</h5>
+                <p>NIM :  0110225044</p>
+                <p class="text-success small mb-3">Programmer</p>
+                <div class="d-flex justify-content-center gap-2">
+                    <a href="#" class="text-secondary fs-5"></a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row g-4 justify-content-center">
+        <div class="col-md-4 text-center">
+            <div class="card border-0 shadow-sm h-100 p-3">
+                <div class="mx-auto mt-3 mb-3" style="width: 120px; height: 120px;">
+                    <img src="../static/images/alfarizi.jpeg" class="rounded-circle img-thumbnail shadow-sm w-100 h-100 object-fit-cover">
+                </div>
+                <h5 class="fw-bold mb-1">Abdul Aziz AL Farizi</h5>
+                <p>NIM : 0110225057</p>
+                <p class="text-success small mb-3">Programmer</p>
+                <div class="d-flex justify-content-center gap-2">
+                    <a href="#" class="text-secondary fs-5"></a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4 text-center">
+            <div class="card border-0 shadow-sm h-100 p-3">
+                <div class="mx-auto mt-3 mb-3" style="width: 120px; height: 120px;">
+                    <img src="../static/images/Sahru.jpeg" class="rounded-circle img-thumbnail shadow-sm w-100 h-100 object-fit-cover">
+                </div>
+                <h5 class="fw-bold mb-1">Sahru Ramadoan</h5>
+                <p>NIM : 0110225046</p>
+                <p class="text-success small mb-3">Programmer</p>
+                <div class="d-flex justify-content-center gap-2">
+                    <a href="#" class="text-secondary fs-5"></a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

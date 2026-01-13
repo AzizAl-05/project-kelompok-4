@@ -1,0 +1,38 @@
+{% extends 'index.html' %}
+
+{% block content %}
+<div class="container py-5">
+    <div class="row justify-content-center">
+        <div class="col-md-4">
+            <div class="card shadow border-0">
+                <div class="card-body p-4">
+                    <h3 class="text-center fw-bold mb-4">Login</h3>
+                    
+                    <form method="POST">
+                        {% csrf_token %} <div class="mb-3">
+                            <label class="form-label">Username</label>
+                            <input type="text" name="username" class="form-control" placeholder="Masukkan username" required>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Password</label>
+                            <input type="password" name="password" class="form-control" placeholder="Masukkan password" required>
+                        </div>
+                        
+                        <div class="d-grid mt-3">
+    <button type="submit" class="btn btn-success fw-bold">Masuk</button>
+</div>
+
+<div class="text-center mt-4">
+    <p class="small mb-1 text-muted">Belum punya akun perpustakaan?</p>
+    <a href="{% url 'register' %}" class="btn btn-outline-primary btn-sm px-4 rounded-pill">
+        Daftar Akun Sekarang
+    </a>
+</div>
+                    </form>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

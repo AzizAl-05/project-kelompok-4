@@ -1,0 +1,54 @@
+{% extends 'index.html' %}
+
+{% block content %}
+<div class="container py-5">
+    <div class="d-flex justify-content-between align-items-center mb-4">
+    <h2 class="fw-bold mb-0">Manajemen Koleksi Buku</h2>
+
+    <div class="d-flex gap-2">
+        <a href="{% url 'home' %}" class="btn btn-outline-secondary">
+            <i class="bi bi-house-door me-1"></i> Home
+        </a>
+        <a href="/admin/perpustakaan/buku/add/" class="btn btn-success">
+            <i class="bi bi-plus-circle me-1"></i> Tambah Buku Baru
+        </a>
+    </div>
+</div>
+
+    <div class="table-responsive card shadow-sm border-0 p-3">
+        <table class="table table-hover align-middle">
+            <thead class="table-light">
+                <tr>
+                    <th>Cover</th>
+                    <th>Judul Buku</th>
+                    <th>Penulis</th>
+                    <th class="text-center">Aksi</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for b in semua_buku %}
+                <tr>
+                    <td>
+                        {% if b.cover %}
+                        <img src="{{ b.cover.url }}" style="height: 60px; width: 45px; object-fit: cover;" class="rounded shadow-sm">
+                        {% endif %}
+                    </td>
+                    <td><span class="fw-bold">{{ b.judul }}</span></td>
+                    <td>{{ b.penulis }}</td>
+                    <td class="text-center">
+                        <div class="btn-group">
+                            <a href="/admin/perpustakaan/buku/{{ b.id }}/change/" class="btn btn-sm btn-outline-primary">
+                                <i class="bi bi-pencil"></i>
+                            </a>
+                            <a href="/admin/perpustakaan/buku/{{ b.id }}/delete/" class="btn btn-sm btn-outline-danger">
+                                <i class="bi bi-trash"></i>
+                            </a>
+                        </div>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
+{% endblock %}
