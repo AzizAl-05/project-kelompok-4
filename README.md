@@ -53,6 +53,14 @@ Sahru Ramadoan (NIM : 0110225046)
 
 ---
 
+**Note!** (Akun Admin)
+
+Username : admin
+
+Password : perpus123
+
+---
+
 ## 🚀 Cara Instalasi & Menjalankan Project
 1. Download keseluruhan project dengan format zip,
 
